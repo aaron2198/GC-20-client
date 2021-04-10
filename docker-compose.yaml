@@ -1,0 +1,13 @@
+version: '3'
+services:
+    app:
+        build:
+            context: .
+            dockerfile: Dockerfile
+            target: dev
+        volumes:
+            - ./package.json:/app/package.json
+            - ./src:/app/src
+            - ./public:/app/public
+        ports:
+            - 3000:3000
